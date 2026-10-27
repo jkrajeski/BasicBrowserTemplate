@@ -28,7 +28,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
+        webView.settings.databaseEnabled = true
 
         goButton.setOnClickListener {
             parseURL(urlEditText.text.toString())
