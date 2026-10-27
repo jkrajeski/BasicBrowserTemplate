@@ -28,5 +28,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+
+        goButton.setOnClickListener {
+            parseURL(urlEditText.text.toString())
+        }
+
+
+
+    }
+    fun parseURL (url: String){
+        if (url.startsWith("http://") || url.startsWith("https://")) {
+            webView.loadUrl(url)
+        } else {
+            webView.loadUrl("https://$url")
+        }
     }
 }
